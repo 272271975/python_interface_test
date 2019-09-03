@@ -1,0 +1,10 @@
+2019-09-03 02:12:59,578 - root - INFO - ********TEST START********
+2019-09-03 02:12:59,593 - root - INFO - test end
+2019-09-03 02:14:43,778 - root - INFO - ********TEST START********
+2019-09-03 02:14:43,779 - root - INFO - login
+2019-09-03 02:14:43,780 - root - INFO - login_PasswordError
+2019-09-03 02:14:43,780 - root - INFO - login_EmailError
+2019-09-03 02:14:43,781 - root - INFO - login_EmailNull
+2019-09-03 02:14:43,782 - root - INFO - login_PasswordNull
+2019-09-03 02:14:43,782 - root - INFO - login_TokenNull
+2019-09-03 02:14:43,784 - root - INFO - test end
