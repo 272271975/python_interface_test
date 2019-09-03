@@ -16,27 +16,23 @@ class testOne(unittest.TestCase):
     testOne
     :return:
     """
-    def setParameters(self, *params,**parmss):
+    def setParameters(self,case_name,data,url,method,result,code,case_method_name,msg):
         """
         set params
-        :param case_name:
-        :param method:
-        :param token:
-        :param sex:
-        :param telephone:
-        :param nickname:
-        :param birthday:
-        :param country_id:
-        :param result:
-        :param code:
-        :param msg:
-        :return:
+        :params case_name
+        :params data
+        :params url
+        :params method
+        :params result
+        :params code
+        :params msg
         """
-        self.case_name = params[0]
-        self.method =params[1]
+        self.case_name = case_name
+        self.data = data
+        self.case_method_name = case_method_name
+        self._testMethodName = case_method_name
 
     def __init__(self,case_name):
-        self.case_name = case_name
         self._testMethodName = self.testOne.__name__
         self._cleanups = ''
         self._testMethodDoc = self.testOne.__doc__
@@ -46,13 +42,33 @@ class testOne(unittest.TestCase):
         """
         self.log = Log.MyLog.get_log()
         self.logger = self.log.get_logger()
-    # def __init__(self,*args):
-    #     unittest.TestCase.__init__(self,*args)
+
+    def tearDown(self):
+        """
+            tearDown
+            reutrn
+        """
+        print('tear down test case ran')
+
+    def test_login1(self):
+        """
+        test_One
+        :return:
+        """
+        self.assertTrue(False)
+        self.assertFalse('LOO'.isupper(), self.case_method_name)
+        print('test_login1-333')
+
     def testOne(self):
         """
         testOne
         :return:
         """
-        self.logger.info(self.case_name)
-        self.assertTrue(True)
-        print(self.case_name)
+        print('call 文件指定的方法 完成测试'+self.case_method_name)
+        if not self.case_method_name:
+            pass
+        else:
+            getattr(self,self.case_method_name)()
+        
+        
+        
